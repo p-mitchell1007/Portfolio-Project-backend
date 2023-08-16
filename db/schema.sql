@@ -8,5 +8,6 @@ CREATE TABLE video_games (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   release_year INT NOT NULL,
-  category TEXT NOT NULL
+  category TEXT NOT NULL,
+  description TEXT 
 );

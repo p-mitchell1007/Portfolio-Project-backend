@@ -21,8 +21,8 @@ const getGame = async (id) => {
 const createGame = async (game) => {
   try {
     const newGame = await db.one(
-      "INSERT INTO video_games (name, release_year, category) VALUES ($1, $2, $3) RETURNING *",
-      [game.name, game.release_year, game.category]
+      "INSERT INTO video_games (name, release_year, category, description) VALUES ($1, $2, $3, $4) RETURNING *",
+      [game.name, game.release_year, game.category, game.description]
     );
     return newGame;
   } catch (error) {
@@ -45,8 +45,8 @@ const deleteGame = async (id) => {
 const updateGame = async (id, game) => {
   try {
     const updatedGame = await db.one(
-      "UPDATE video_games SET name = $1, release_year = $2, category = $3 WHERE id = $4 RETURNING *",
-      [game.name, game.release_year, game.category, id]
+      "UPDATE video_games SET name = $1, release_year = $2, category = $3, description = $4 WHERE id = $5 RETURNING *",
+      [game.name, game.release_year, game.category, game.description, id]
     );
     return updatedGame;
   } catch (error) {
@@ -61,3 +61,4 @@ module.exports = {
   deleteGame,
   updateGame,
 };
+
