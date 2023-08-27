@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 // Games ROUTES
-const gamesController = require("./controllers/gamesController");
+const gamesController = require("./controllers/gamesController.js");
 app.use("/games", gamesController);
 
 
