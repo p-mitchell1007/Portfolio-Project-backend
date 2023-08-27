@@ -11,13 +11,12 @@ app.use(express.json());
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to PM Games");
+  res.send("Welcome to Video Game App");
 });
 
 // Games ROUTES
 const gamesController = require("./controllers/gamesController.js");
 app.use("/games", gamesController);
-
 
 // 404 PAGE
 app.get("*", (req, res) => {
