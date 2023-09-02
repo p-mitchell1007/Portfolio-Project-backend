@@ -4,6 +4,8 @@ CREATE DATABASE video_games_dev;
 
 \c video_games_dev;
 
+DROP TABLE IF EXISTS video_games_dev
+
 CREATE TABLE video_games (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
