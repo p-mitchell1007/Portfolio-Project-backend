@@ -11,13 +11,4 @@ const cn = {
 
 const db = pgp(cn);
 
-db.connect()
-  .then((obj) => {
-    const serverVersion = obj.client.serverVersion;
-    console.log("postgress connection established");
-    obj.done();
-  })
-  .catch((error) => {
-    console.log("ERROR", eror.message || error);
-  })
 module.exports = db;
